@@ -4,6 +4,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 import javax.imageio.ImageIO;
 import Karten.Karten;
 
@@ -14,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -34,9 +40,10 @@ public class Runden extends Application {
 		 
 		
 	
-
+		public String[] WertName;
+		public String[] Farbe;
 		private Karten[] pack;
-		private int jetztigeKarte;
+		//private int jetztigeKarte;
 		
 		public Runden() throws IOException {
 			
@@ -46,21 +53,21 @@ public class Runden extends Application {
 			pack = new Karten[52];
 			
 			
-			
-			/*Image spielerkarte = new Image ("/Bilder/Pik_Q.jpg");
-			kartensehen.setImage(spielerkarte);*/
-			
-		
+			this.WertName = Werte;
+			this.Farbe = Farben;
 			
 			
-			jetztigeKarte = 0;
+			
+			
+			
+			
+			
+			//jetztigeKarte = 0;
 			
 			
 			
 			final int breite = 123;
 			final int groesse = 172;
-			final int zeilen = 4;
-			final int spalten = 13;
 			
 			BufferedImage PaketBild = ImageIO.read(new File("res/Kartenpaket.jpg"));
 			BufferedImage tempCardImage;
@@ -81,26 +88,50 @@ public class Runden extends Application {
 		
 	
 		@FXML
-		public Label connect;
+		public TextArea connect;
 		
 		@FXML
 		public ImageView kartensehen;
 		
+		@FXML
+		public ImageView kartensehen2;
+
+		
+		
+		
 		
 			
 		public void paketzeigen(ActionEvent event) {
+			
 			for(Karten Karte : pack)
 			connect.setText(Karte + "");
 			//System.out.println(Karte);
+			
+			
+			String randomFarbe = (Farbe[new Random().nextInt(Farbe.length)]);
+			String randomWert = (WertName[new Random().nextInt(WertName.length)]);
+			Image spielerkarte = new Image ("/Bilder/" + randomFarbe + "_" + randomWert + ".png");
+			kartensehen.setImage(spielerkarte);
+			List<String> list = new ArrayList<String>(Arrays.asList());
+			list.remove(randomWert);
+			System.out.println("After: "+Arrays.toString(WertName));
+			
+			String randomFarbe2 = (Farbe[new Random().nextInt(Farbe.length)]);
+			String randomWert2 = (WertName[new Random().nextInt(WertName.length)]);
+			Image spielerkarte2 = new Image ("/Bilder/" + randomFarbe2 + "_" + randomWert2 + ".png");
+			kartensehen2.setImage(spielerkarte2);
+			list.remove(randomWert2);
+			System.out.println("After: "+Arrays.toString(WertName));
 		}
 		
-		/*
-			String spielerkarte = "res/" + farbe + "_" + wert + ".png";
-			Runden view = new Runden(ImageIO.read(new File(spielerkarte)));
-		}*/
+		
+		
+		public void spielerkartezeigen (ActionEvent event) {
+		
+		}
 		
 		public void mixen(ActionEvent event) {
-			jetztigeKarte = 0;
+			//jetztigeKarte = 0;
 			
 			
 			SecureRandom randomZahl = new SecureRandom();
@@ -112,6 +143,7 @@ public class Runden extends Application {
 				Karten temp = pack [erste];
 				pack[erste] = pack[zweite];
 				pack[zweite] = temp;
+				
 				
 				
 			}
@@ -127,10 +159,11 @@ public class Runden extends Application {
 		//}
 		
 			
-		public static void main(String[] args, ActionEvent e) throws IOException {
+		public static void main(String[] args, ActionEvent e, String[] Farbe, String[] Werte ) throws IOException {
 			Runden neuPaket = new Runden();
 			neuPaket.mixen(e);
 			neuPaket.paketzeigen(e);
+			neuPaket.spielerkartezeigen(e);
 			launch(args);
 			
 		}
