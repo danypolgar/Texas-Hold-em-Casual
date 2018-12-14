@@ -25,12 +25,12 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
-public class Runden extends Application {
+public class Main extends Application {
 	
 	
 		@Override
 		    public void start(Stage primaryStage) throws Exception {
-		        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+		        Parent root = FXMLLoader.load(getClass().getResource("PokerTableView.fxml"));
 		        Scene scene = new Scene(root);
 		        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 		        primaryStage.setTitle("my Title");
@@ -45,7 +45,7 @@ public class Runden extends Application {
 		private Karten[] pack;
 		//private int jetztigeKarte;
 		
-		public Runden() throws IOException {
+		public Main() throws IOException {
 			
 			String[] Werte = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q" , "K", "A"};
 			String[] Farben = {"Karo", "Treff", "Herz", "Pik"};
@@ -112,16 +112,14 @@ public class Runden extends Application {
 			String randomWert = (WertName[new Random().nextInt(WertName.length)]);
 			Image spielerkarte = new Image ("/Bilder/" + randomFarbe + "_" + randomWert + ".png");
 			kartensehen.setImage(spielerkarte);
-			List<String> list = new ArrayList<String>(Arrays.asList());
-			list.remove(randomWert);
-			System.out.println("After: "+Arrays.toString(WertName));
+			
+			
 			
 			String randomFarbe2 = (Farbe[new Random().nextInt(Farbe.length)]);
 			String randomWert2 = (WertName[new Random().nextInt(WertName.length)]);
 			Image spielerkarte2 = new Image ("/Bilder/" + randomFarbe2 + "_" + randomWert2 + ".png");
 			kartensehen2.setImage(spielerkarte2);
-			list.remove(randomWert2);
-			System.out.println("After: "+Arrays.toString(WertName));
+		
 		}
 		
 		
@@ -160,7 +158,7 @@ public class Runden extends Application {
 		
 			
 		public static void main(String[] args, ActionEvent e, String[] Farbe, String[] Werte ) throws IOException {
-			Runden neuPaket = new Runden();
+			Main neuPaket = new Main();
 			neuPaket.mixen(e);
 			neuPaket.paketzeigen(e);
 			neuPaket.spielerkartezeigen(e);
