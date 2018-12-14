@@ -46,7 +46,7 @@ public static void main(String[] args) throws IOException {
 	System.out.println(PikAss.toString());
 	System.out.println("Ass = " + PikAss.getKartenWert());
 	
-	JFrame Fenster = new JFrame("Karte");
+	/*JFrame Fenster = new JFrame("Karte");
 	Fenster.setSize(400,600);
 	Fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	Fenster.setVisible(true);
@@ -58,7 +58,7 @@ public static void main(String[] args) throws IOException {
 	KarteLabel.setSize(50,100);
 	
 	Tisch.add(KarteLabel);
-	Fenster.add(Tisch);
+	Fenster.add(Tisch);*/
 	
 }
 
