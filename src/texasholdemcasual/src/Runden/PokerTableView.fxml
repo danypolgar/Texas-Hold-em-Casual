@@ -8,19 +8,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000" prefWidth="1500" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Runden.Main">
+<AnchorPane prefHeight="1000" prefWidth="1500" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Runden.PokerTableController">
    <children>
       <AnchorPane layoutX="-37.0" layoutY="65.0" prefHeight="0.0" prefWidth="145.0" />
       <Button layoutX="684.0" layoutY="849.0" mnemonicParsing="false" onAction="#paketzeigen" prefHeight="35.0" prefWidth="130.0" text="show cards" textFill="#5a3709">
          <font>
             <Font name="Century" size="18.0" />
          </font></Button>
-      <ImageView fx:id="kartensehen2" fitHeight="224.0" fitWidth="145.0" layoutX="567.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="kartensehen2" fitHeight="224.0" fitWidth="145.0" layoutX="567.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image></ImageView>
       <ImageView fx:id="kartensehen" fitHeight="224.0" fitWidth="145.0" layoutX="750.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Bilder/Treff_A.png" />
+            <Image url="@../Bilder/deckblatt.JPG" />
          </image></ImageView>
-      <Button layoutX="593.0" layoutY="849.0" mnemonicParsing="false" onAction="#mixen" prefHeight="33.0" prefWidth="78.0" text="mixen" textFill="#5a3709">
+      <Button layoutX="593.0" layoutY="849.0" mnemonicParsing="false" onAction="#onButtonMixenClick" prefHeight="33.0" prefWidth="78.0" text="mixen" textFill="#5a3709">
          <font>
             <Font name="Century" size="18.0" />
          </font></Button>
