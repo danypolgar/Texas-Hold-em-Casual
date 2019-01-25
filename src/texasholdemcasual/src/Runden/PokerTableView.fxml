@@ -1,33 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000" prefWidth="1500" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Runden.PokerTableController">
+<AnchorPane prefHeight="786.0" prefWidth="1316.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Runden.PokerTableController">
    <children>
-      <AnchorPane layoutX="-37.0" layoutY="65.0" prefHeight="0.0" prefWidth="145.0" />
-      <Button layoutX="684.0" layoutY="849.0" mnemonicParsing="false" onAction="#paketzeigen" prefHeight="35.0" prefWidth="130.0" text="show cards" textFill="#5a3709">
+      <AnchorPane layoutX="-307.0" layoutY="65.0" prefHeight="0.0" prefWidth="145.0" />
+      <Button fx:id="revealButton" layoutX="780.0" layoutY="739.0" mnemonicParsing="false" onAction="#onTestButtonClick" prefHeight="35.0" prefWidth="172.0" text="show all cards" textFill="#5a3709" visible="false">
          <font>
             <Font name="Century" size="18.0" />
          </font></Button>
-      <ImageView fx:id="kartensehen2" fitHeight="224.0" fitWidth="145.0" layoutX="567.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="kartensehen2" fitHeight="111.0" fitWidth="74.0" layoutX="584.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/deckblatt.JPG" />
          </image></ImageView>
-      <ImageView fx:id="kartensehen" fitHeight="224.0" fitWidth="145.0" layoutX="750.0" layoutY="601.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="kartensehen" fitHeight="122.0" fitWidth="74.0" layoutX="676.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/deckblatt.JPG" />
          </image></ImageView>
-      <Button layoutX="593.0" layoutY="849.0" mnemonicParsing="false" onAction="#onButtonMixenClick" prefHeight="33.0" prefWidth="78.0" text="mixen" textFill="#5a3709">
-         <font>
-            <Font name="Century" size="18.0" />
-         </font></Button>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <TextArea fx:id="connect" layoutX="108.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="showCardsButton" layoutX="631.0" layoutY="739.0" mnemonicParsing="false" onAction="#onZeigeKartenClick" prefHeight="35.0" prefWidth="124.0" text="show cards" textFill="#5a3709">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="kartensehenFourthBot" fitHeight="108.0" fitWidth="74.0" layoutX="194.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenFourthBot2" fitHeight="122.0" fitWidth="74.0" layoutX="293.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenFirstBot" fitHeight="103.0" fitWidth="74.0" layoutX="967.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenFirstBot2" fitHeight="115.0" fitWidth="74.0" layoutX="1066.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenThirdBot" fitHeight="112.0" fitWidth="74.0" layoutX="265.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenThirdBot2" fitHeight="116.0" fitWidth="74.0" layoutX="367.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenSecondBot" fitHeight="111.0" fitWidth="74.0" layoutX="893.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenSecondBot2" fitHeight="112.0" fitWidth="74.0" layoutX="996.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenGemeinsam1" fitHeight="118.0" fitWidth="74.0" layoutX="449.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenGemeinsam2" fitHeight="119.0" fitWidth="74.0" layoutX="539.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenGemeinsam3" fitHeight="115.0" fitWidth="74.0" layoutX="631.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenGemeinsam4" fitHeight="103.0" fitWidth="74.0" layoutX="725.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="kartensehenGemeinsam5" fitHeight="116.0" fitWidth="74.0" layoutX="819.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/deckblatt.JPG" />
+         </image>
+      </ImageView>
+      <Button fx:id="readyButton" layoutX="499.0" layoutY="739.0" mnemonicParsing="false" onAction="#onReadyClick" prefHeight="35.0" prefWidth="106.0" text="ready" textFill="#5a3709" visible="false">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="resultsButton" layoutX="379.0" layoutY="739.0" mnemonicParsing="false" onAction="#onResultsButtonclick" prefHeight="35.0" prefWidth="106.0" text="results" textFill="#5a3709" visible="false">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

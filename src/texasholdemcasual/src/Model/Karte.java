@@ -6,6 +6,7 @@ public class Karte {
 	
 	public int Wert;
 	public String Wertname; 
+	public int Farbwert;
 	public String Farbe;
 	public Image Bild;
 	
