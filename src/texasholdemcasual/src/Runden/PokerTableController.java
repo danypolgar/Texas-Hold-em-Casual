@@ -307,17 +307,7 @@ public class PokerTableController {
 		return karte;
 	}
 
-	/*
-	private Karte HoleKarte(int wert, int farbeWert) {
 	
-		for (Karte k : kartenStapel) {
-			if (k.Wert == wert && k.Farbwert == farbeWert) {
-				return k;
-			}
-		}
-		return null;
-	}
-	*/
 	
 	
 	private void showInformation(String title, String message) {
